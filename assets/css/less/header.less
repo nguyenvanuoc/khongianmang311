@@ -1,0 +1,256 @@
+/*---Header---*/
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  right: 0px;
+  justify-content: space-between;
+  &.fixed{
+    background-color: var(--main-color);
+  }
+  .container {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+  }
+  .logo{
+    display: flex;
+    color: #fff;
+    font-size: 14px;
+    align-items: center;
+    column-gap: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    .img{
+      img{
+        width: 54px;
+
+      }
+    }
+    .title{
+      display: flex;
+
+    }
+  }
+  .box-menus{
+    flex: 1;
+    min-width: 0px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .navs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    >li {
+      display: block;
+      .relative;
+      >a {
+        position: relative;
+        display: block;
+        padding: 6px 15px;
+        color: #fff;
+        border-radius: 20px;
+        &:hover {
+          text-decoration: none;
+        }
+
+      }
+
+      &:last-child {
+        >a {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      &:hover {
+
+        >a {
+          background: #0f568a;
+        }
+      }
+
+      &:hover {
+        >.dropdown-menu {
+          display: block;
+        }
+      }
+
+      &.active {
+        >a {
+          background: #F182A3;
+          
+
+        }
+      }
+
+    }
+  }
+
+  .dropdown-menu {
+    background: #0f568a;
+    border-radius: 0px;
+    box-shadow: none;
+    border: 0px;
+    margin: 0px;
+
+    >li {
+      >a {
+        color: #fff;
+        text-shadow: 0px 1px 2px fade(#000, 20);
+      }
+
+      &:hover,
+      &:focus {
+        >a {
+          background: fade(#000, 10);
+        }
+
+      }
+
+      &:hover {
+        >.dropdown-menu {
+          display: block;
+          top: 0px;
+          left: 100%;
+
+        }
+      }
+    }
+
+  }
+  .search-box{
+    position: relative;
+    .form-control{
+      background-color: transparent;
+      color: #fff;
+      border-radius: 20px;
+      border-color: #fff;
+      padding-right: 30px;
+      height: 34px;
+      &::placeholder{
+        color: fade(#fff,60%);
+
+      }
+    }
+    .icon{
+      position: absolute;
+      font-size: 16px;
+      top: 0px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      bottom: 0px;
+      color: #fff;
+
+    }
+  }
+  .nav-toggle{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+/*---End Header---*/
+.hero-banner{
+  position: relative;
+  .slick-prev,.slick-next{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0px;
+    display: flex;
+    font-size: 0px;
+    align-items: center;
+    justify-content: center;
+    color: #1A2E51;
+    z-index: 2;
+    &:before{
+      font-size: 16px;
+      font-family: "ap";
+
+    }
+  }
+  .slick-prev{
+    left: 10px;
+    &::before{
+      content: "\ee75";
+    }
+  }
+  .slick-next{
+    right: 10px;
+    &::before{
+      content: "\ee77";
+    }
+  }
+}
+
+@media(max-width:991px){
+  .header{
+    .logo{
+      flex: 1;
+      min-width: 0px;
+      .img{
+        img{
+          max-width: 40px;
+        }
+      }
+      .text-content{
+        display: none;
+      }
+    }
+    .box-menus{
+      position: fixed;
+      background-color: @main;
+      top: 0px;
+      left: -100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+      bottom: 0px;
+      width: 260px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 14px;
+      
+    }
+    .navs{
+      flex-direction: column;
+      width: 100%;
+      li{
+        width: 100%;
+      }
+    }
+    &.show-menus{
+      .box-menus{
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
