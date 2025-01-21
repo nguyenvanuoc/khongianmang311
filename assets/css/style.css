@@ -3,7 +3,7 @@
 * @ Author: Uoc Nguyen
 * @ Fontend Developer
 * @ Website: http://lamnham.com
-* @ Template: Duthaovanban
+* @ Template: khonggianmang311
 */
 .borderbox {
   box-sizing: border-box;
@@ -875,6 +875,9 @@ img {
   color: #000;
   margin-bottom: 30px;
 }
+.article h1 {
+  font-size: 32px;
+}
 .article .title-news h1 {
   font-size: 24px;
   font-weight: bold;
@@ -896,68 +899,6 @@ img {
   display: block;
   clear: both;
 }
-.article .news-meta {
-  padding: 5px 0px;
-  margin: 10px 0;
-}
-.article .news-meta .action-cta-news {
-  margin-top: 5px;
-}
-.article .news-meta .action-cta-news > a {
-  padding: 2px 5px;
-  line-height: 16px;
-  font-weight: bold;
-  background: #f4f5f6;
-  font-size: 11px;
-  border: 1px solid #d5d6d7;
-  margin: 0px 1px;
-  display: inline-block;
-  color: #545657;
-}
-.article .news-meta .action-cta-news > a:hover {
-  text-decoration: none;
-  background: #0c69cc;
-  color: #fff;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-.article .share-button {
-  margin-top: 10px;
-  float: right;
-}
-.article .share-button .btn {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  padding: 0px;
-  color: #fff;
-}
-.article .share-button .btn.-fb {
-  background: #3b5999;
-}
-.article .share-button .btn.-gg {
-  background: #dd4b39;
-}
-.article .share-button .btn.-tt {
-  background: #55acee;
-}
-.article .share-button .btn.-lk {
-  background: #0077B5;
-}
-.article .share-button .btn:hover {
-  opacity: 0.8;
-}
-.article .actions .btn {
-  color: #666;
-  background: #f6f6f6;
-  border-color: #eee;
-  border-radius: 0px;
-  font-size: 12px;
-  padding: 3px 10px;
-}
-.article .actions .btn:hover {
-  color: #007FDE;
-}
 .article p,
 .article div,
 .article li {
@@ -969,6 +910,26 @@ img {
 }
 .article img {
   max-width: 100%;
+}
+.article .article-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.article .article-bottom .share-button {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+}
+.article .article-bottom .share-button a {
+  display: block;
+}
+.article .article-bottom .share-button a img {
+  width: 32px;
 }
 .pagination {
   margin: 0px;
@@ -1628,6 +1589,100 @@ img {
   100% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
   }
+}
+.table-content {
+  overflow: auto;
+}
+.table-result {
+  width: 100%;
+}
+.table-result td,
+.table-result th {
+  padding: 8px 10px;
+  border: 1px solid #CCD1D8;
+}
+.main-video {
+  display: flex;
+  background-color: #6F4793;
+}
+.main-video .video-canvas {
+  flex: 1;
+  min-width: 0px;
+  min-height: 450px;
+}
+.main-video .post-content {
+  color: #fff;
+  padding: 20px;
+  width: 30%;
+}
+.main-video .post-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.333;
+  margin-bottom: 10px;
+}
+.main-video .post-date {
+  color: #fff;
+}
+.main-video .post-date .icon {
+  color: #fff;
+}
+@media (max-width: 991px) {
+  .main-video .post-content {
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .main-video {
+    display: block;
+  }
+  .main-video .post-content {
+    width: 100%;
+  }
+}
+.list-video {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+.list-video .item {
+  width: calc((100% - 60px)/4);
+}
+@media (max-width: 991px) {
+  .list-video .item {
+    width: calc((100% - 40px)/3);
+  }
+}
+@media (max-width: 600px) {
+  .list-video .item {
+    width: calc((100% - 20px)/2);
+  }
+}
+.list-video .post-image {
+  position: relative;
+}
+.list-video .post-image .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.list-video .post-title > a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+.list-video .post-title > a:hover {
+  color: #007FDE;
 }
 .footer {
   padding: 15px 0px;
